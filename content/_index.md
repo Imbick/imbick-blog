@@ -1,6 +1,3 @@
 ---
-title: "Homepage"
-layout: "home"
+title: "Imbick homepage"
 ---
-
-Welcome to the homepage.

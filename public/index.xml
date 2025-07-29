@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Homepage on Imbick&#39;s Edge</title>
-    <link>https://imbick.com/</link>
-    <description>Recent content in Homepage on Imbick&#39;s Edge</description>
+    <title>Imbick homepage on Imbick&#39;s Edge</title>
+    <link>http://localhost:1313/</link>
+    <description>Recent content in Imbick homepage on Imbick&#39;s Edge</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© 2025 </copyright>
-    <lastBuildDate>Mon, 28 Jul 2025 18:16:33 +0100</lastBuildDate><atom:link href="https://imbick.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 28 Jul 2025 18:16:33 +0100</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Welcome</title>
-      <link>https://imbick.com/posts/welcome/</link>
+      <link>http://localhost:1313/posts/welcome/</link>
       <pubDate>Mon, 28 Jul 2025 18:16:33 +0100</pubDate>
       
-      <guid>https://imbick.com/posts/welcome/</guid>
+      <guid>http://localhost:1313/posts/welcome/</guid>
       <description></description>
       
     </item>

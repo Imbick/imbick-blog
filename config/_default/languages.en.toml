@@ -9,18 +9,18 @@ title = "Imbick's Edge"
   isoCode = "en"
   rtl = false
   dateFormat = "2 January 2006"
-  logo = "img/logo2-01.png"
-  secondaryLogo = "img/logo2-01.png"
+  logo = "/img/logo2-01.png"
+  secondaryLogo = "/img/logo2-01.png"
   description = "Imbick website"
   # copyright = "Copy, _right?_ :thinking_face:"
 
   [params.author]
 #   name = "Your name here"
 #   email = "youremail@example.com"
-#	image = "https://blog.imbick.com/img/logo2-01.png"
+	image = "https://imbick.com/img/logo2-01.png"
 
 #   imageQuality = 96
-   headline = "Suddenly, something went wrong ..."
+   headline = "\"Suddenly, something went wrong ...\""
 #   bio = "A little bit about you"
 #   links = [
 #     { email = "mailto:hello@your_domain.com" },
