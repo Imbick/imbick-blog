@@ -2,24 +2,25 @@ disabled = false
 languageCode = "en"
 languageName = "English"
 weight = 1
-title = "Blowfish"
+title = "Imbick's Edge"
 
 [params]
   displayName = "EN"
   isoCode = "en"
   rtl = false
   dateFormat = "2 January 2006"
-  # logo = "img/logo.png"
-  # secondaryLogo = "img/secondary-logo.png"
-  # description = "My awesome website"
+  logo = "img/logo2-01.png"
+  secondaryLogo = "img/logo2-01.png"
+  description = "Imbick website"
   # copyright = "Copy, _right?_ :thinking_face:"
 
-# [params.author]
+  [params.author]
 #   name = "Your name here"
 #   email = "youremail@example.com"
-#   image = "img/blowfish_logo.png"
+#	image = "https://blog.imbick.com/img/logo2-01.png"
+
 #   imageQuality = 96
-#   headline = "I'm only human"
+   headline = "Suddenly, something went wrong ..."
 #   bio = "A little bit about you"
 #   links = [
 #     { email = "mailto:hello@your_domain.com" },
