@@ -11,8 +11,8 @@ title = "Imbick's Edge"
   dateFormat = "2 January 2006"
   logo = "/img/logo2-01.png"
   secondaryLogo = "/img/logo2-01.png"
-  description = "Imbick website"
-  # copyright = "Copy, _right?_ :thinking_face:"
+  description = "We make games"
+  copyright = "&copy; Copyright imbick.com, 2025"
 
   [params.author]
 #   name = "Your name here"

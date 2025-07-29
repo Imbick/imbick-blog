@@ -1,3 +1,3 @@
 ---
-title: "Imbick homepage"
+title: "Imbick's Edge"
 ---

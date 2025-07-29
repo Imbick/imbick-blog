@@ -3,19 +3,19 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
   <url>
-    <loc>http://localhost:1313/</loc>
+    <loc>https://imbick.com/</loc>
     <lastmod>2025-07-28T18:16:33+01:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:1313/posts/</loc>
+    <loc>https://imbick.com/posts/</loc>
     <lastmod>2025-07-28T18:16:33+01:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:1313/posts/rise/</loc>
+    <loc>https://imbick.com/posts/rise/</loc>
     <lastmod>2025-07-28T18:16:33+01:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>

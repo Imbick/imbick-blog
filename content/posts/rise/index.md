@@ -8,7 +8,7 @@ Not quite a game, but a here's a game-like-thing I made nonetheless.
 
 {{< button href="/downloads/rise-0.1.0-alpha.zip" target="_self" >}}
 {{< icon "download" >}}
-Download v0.1.0-alpha
+&nbsp;Download v0.1.0-alpha
 {{< /button >}}
 
 C#, .NET 8, fully custom engine.  
