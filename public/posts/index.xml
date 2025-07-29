@@ -10,13 +10,13 @@
     <lastBuildDate>Mon, 28 Jul 2025 18:16:33 +0100</lastBuildDate><atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>Welcome</title>
-      <link>http://localhost:1313/posts/welcome/</link>
+      <title>We make games</title>
+      <link>http://localhost:1313/posts/rise/</link>
       <pubDate>Mon, 28 Jul 2025 18:16:33 +0100</pubDate>
       
-      <guid>http://localhost:1313/posts/welcome/</guid>
+      <guid>http://localhost:1313/posts/rise/</guid>
       <description></description>
-      
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/rise/feature.png" />
     </item>
     
   </channel>
