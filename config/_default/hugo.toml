@@ -3,7 +3,7 @@
 # https://blowfish.page/docs/getting-started/
 
 theme = "blowfish" # UNCOMMENT THIS LINE
-baseURL = "https://blog.imbick.com/"
+baseURL = "https://imbick.com/"
 languageCode = "en"
 defaultContentLanguage = "en"
 
