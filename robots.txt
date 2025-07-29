@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://blog.imbick.com/sitemap.xml
+Sitemap: https://imbick.com/sitemap.xml
