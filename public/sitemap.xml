@@ -3,25 +3,31 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
   <url>
+    <loc>http://localhost:1313/posts/gravity/</loc>
+    <lastmod>2025-07-31T19:13:34+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>http://localhost:1313/</loc>
-    <lastmod>2025-07-30T08:16:22+01:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>http://localhost:1313/posts/jumping/</loc>
-    <lastmod>2025-07-30T08:16:22+01:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>http://localhost:1313/posts/playing/</loc>
-    <lastmod>2025-07-30T08:16:22+01:00</lastmod>
+    <lastmod>2025-07-31T19:13:34+01:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>http://localhost:1313/posts/</loc>
+    <lastmod>2025-07-31T19:13:34+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://localhost:1313/posts/jumping/</loc>
+    <lastmod>2025-07-30T17:52:02+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://localhost:1313/posts/playing/</loc>
     <lastmod>2025-07-30T08:16:22+01:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
