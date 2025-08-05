@@ -14,15 +14,15 @@
   <meta name="theme-color">
 
   
-  <title>Gravity &middot; Imbick&#39;s Edge</title>
-    <meta name="title" content="Gravity &middot; Imbick&#39;s Edge">
+  <title>Extensions &middot; Imbick&#39;s Edge</title>
+    <meta name="title" content="Extensions &middot; Imbick&#39;s Edge">
 
   
   <meta name="description" content="We make games">
   
   
   
-  <link rel="canonical" href="https://imbick.com/posts/gravity/">
+  <link rel="canonical" href="https://imbick.com/posts/extendo/">
   
   
   
@@ -94,19 +94,19 @@
   
 
   
-  <meta property="og:url" content="https://imbick.com/posts/gravity/">
+  <meta property="og:url" content="https://imbick.com/posts/extendo/">
   <meta property="og:site_name" content="Imbick&#39;s Edge">
-  <meta property="og:title" content="Gravity">
+  <meta property="og:title" content="Extensions">
   <meta property="og:description" content="We make games">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2025-08-03T09:33:12+01:00">
-    <meta property="article:modified_time" content="2025-08-03T09:33:12+01:00">
+    <meta property="article:published_time" content="2025-08-05T08:38:14+01:00">
+    <meta property="article:modified_time" content="2025-08-05T08:38:14+01:00">
 
   
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Gravity">
+  <meta name="twitter:title" content="Extensions">
   <meta name="twitter:description" content="We make games">
 
   <script type="application/ld+json">
@@ -114,26 +114,26 @@
     "@context": "https://schema.org",
     "@type": "Article",
     "articleSection": "Posts",
-    "name": "Gravity",
-    "headline": "Gravity",
+    "name": "Extensions",
+    "headline": "Extensions",
     
     
     "inLanguage": "en",
-    "url" : "https:\/\/imbick.com\/posts\/gravity\/",
+    "url" : "https:\/\/imbick.com\/posts\/extendo\/",
     "author" : {
       "@type": "Person",
       "name": ""
     },
     "copyrightYear": "2025",
-    "dateCreated": "2025-08-03T09:33:12\u002b01:00",
-    "datePublished": "2025-08-03T09:33:12\u002b01:00",
+    "dateCreated": "2025-08-05T08:38:14\u002b01:00",
+    "datePublished": "2025-08-05T08:38:14\u002b01:00",
     
-    "dateModified": "2025-08-03T09:33:12\u002b01:00",
+    "dateModified": "2025-08-05T08:38:14\u002b01:00",
     
     
     
     "mainEntityOfPage": "true",
-    "wordCount": "101"
+    "wordCount": "253"
   }]
   </script>
 
@@ -380,13 +380,13 @@
     
       <div
         class="w-full rounded-md h-36 md:h-56 lg:h-72 single_hero_basic nozoom"
-        style="background-image:url(/posts/gravity/background.svg);"></div>
+        style="background-image:url(/posts/extendo/background.svg);"></div>
     
   
     
       <div
         class="fixed inset-x-0 top-0 h-[800px] single_hero_background nozoom"
-        style="background-image:url(/posts/gravity/background.svg);">
+        style="background-image:url(/posts/extendo/background.svg);">
         <div
           class="absolute inset-0 bg-gradient-to-t from-neutral dark:from-neutral-800 to-transparent mix-blend-normal"></div>
         <div
@@ -413,7 +413,7 @@
     <header id="single_header" class="mt-5 max-w-prose">
       
       <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
-        Gravity
+        Extensions
       </h1>
       <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
         
@@ -462,7 +462,7 @@
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <time datetime="2025-08-03T09:33:12&#43;01:00">3 August 2025</time>
+      <time datetime="2025-08-05T08:38:14&#43;01:00">5 August 2025</time>
     
 
     
@@ -511,17 +511,62 @@
 
 
         <div class="article-content max-w-prose mb-20">
-          <p>Who knew realism was so hard to program?</p>
-<p>Meanwhile I took a few days to visit friends. Now working on world interaction.
-So started with block picking which needs a way to query live block info.
-That means I&rsquo;m looking into block and chunk storage techniques.
-Will probably end up with a sort of live (narrow) grid of chunks which exists around the player
-and is updated as you traverse chunk boundaries. Not sure how to handle the actual loading and
-generating of chunks when this happens. I may need to separate the two quite strictly.</p>
-<p><a
-  href="https://open.spotify.com/album/47t314eVE04Jy5TEafaBMX?si=2gpdrpISSmSsAwhFKVaCRw"
-    target="_blank"
-  >This</a> is helping immensely 🧚</p>
+          <p>As part of the block picking work I had to move the Input Context which handles in game actions from
+the main framework into the extension.  So I figured it&rsquo;s probably worth a quick explanation of how
+extensions currently work.</p>
+
+  
+
+
+
+<div
+  
+    class="flex px-4 py-3 rounded-md bg-primary-100 dark:bg-primary-900"
+  
+  >
+  <span
+    
+      class="text-primary-400 ltr:pr-3 rtl:pl-3 flex items-center"
+    
+    >
+    
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M506.3 417l-213.3-364c-16.33-28-57.54-28-73.98 0l-213.2 364C-10.59 444.9 9.849 480 42.74 480h426.6C502.1 480 522.6 445 506.3 417zM232 168c0-13.25 10.75-24 24-24S280 154.8 280 168v128c0 13.25-10.75 24-23.1 24S232 309.3 232 296V168zM256 416c-17.36 0-31.44-14.08-31.44-31.44c0-17.36 14.07-31.44 31.44-31.44s31.44 14.08 31.44 31.44C287.4 401.9 273.4 416 256 416z"/></svg>
+
+  </span>
+
+
+  </span>
+
+  <span
+    
+      class="dark:text-neutral-300"
+    
+    >This is almost certainly going to radically change&hellip;</span>
+</div>
+
+<p>The rise framework will scan the local <code>extensions</code> folder and then search for <code>dll</code> files within
+subfolders. Each subfolder will be treated as it&rsquo;s own extension. The <code>dll</code> file will then be
+searched for any public class which inherits from <code>Extension</code>. All libraries with the extension
+folder will then be searched for event handlers. The list of event handlers is currently things
+like:</p>
+<ul>
+<li><code>TickEvent</code></li>
+<li><code>Local/NetworkClientConnectedEvent</code></li>
+<li>etc.</li>
+</ul>
+<p>The next step is to invoke <code>AddServices</code> on the extension instance. This will give the extension a
+chance to register or override any services in the DI container. (Due to security there will
+probably only be a handful of well defined extension points that are allowed to be overridden, but
+for now it&rsquo;s everything.)</p>
+<p>Once the extension class and event handlers are loaded the <code>OnEnabled</code> method of the extension
+instance is invoked. Allowing the extension to perform any initialisation it needs. The <code>OnEnabled</code>
+method will receive an instance of the extension <code>IHost</code> which will provide access to framework
+services.</p>
+<p>What all this means is that the entire voxel game is an extension. And I will provide additional
+extensions which showcase what can be achieved and possibly even make them open source.</p>
+<p>I&rsquo;ll demonstrate all this in more depth soon.</p>
 
           
           
@@ -551,8 +596,8 @@ generating of chunks when this happens. I may need to separate the two quite str
           type="text/javascript"
           src="/js/page.min.54b6f4371722649edbe871e431d8670d670878c22be8f36e229fe53cc9b786fe25a834def5e6de621f7a3e37b72bc8cd73839aa5ed907ed6cbd45cd3e1b0fa20.js"
           integrity="sha512-VLb0NxciZJ7b6HHkMdhnDWcIeMIr6PNuIp/lPMm3hv4lqDTe9ebeYh96Pje3K8jNc4Oape2QftbL1FzT4bD6IA=="
-          data-oid="views_posts\gravity\index.md"
-          data-oid-likes="likes_posts\gravity\index.md"></script>
+          data-oid="views_posts\extendo\index.md"
+          data-oid-likes="likes_posts\extendo\index.md"></script>
       
 
     </section>
@@ -567,7 +612,7 @@ generating of chunks when this happens. I may need to separate the two quite str
       <div class="flex justify-between pt-3">
         <span>
           
-            <a class="flex group mr-3" href="/posts/jumping/">
+            <a class="flex group mr-3" href="/posts/gravity/">
               <span
                 class="mr-3 text-neutral-700 group-hover:text-primary-600 ltr:inline rtl:hidden dark:text-neutral dark:group-hover:text-primary-400"
                 >&larr;</span
@@ -578,11 +623,11 @@ generating of chunks when this happens. I may need to separate the two quite str
               >
               <span class="flex flex-col">
                 <span class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
-                  >Jumps</span
+                  >Gravity</span
                 >
                 <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
                   
-                    <time datetime="2025-07-30T17:52:02&#43;01:00">30 July 2025</time>
+                    <time datetime="2025-08-03T09:33:12&#43;01:00">3 August 2025</time>
                   
                 </span>
               </span>
@@ -590,27 +635,6 @@ generating of chunks when this happens. I may need to separate the two quite str
           
         </span>
         <span>
-          
-            <a class="flex text-right group ml-3" href="/posts/extendo/">
-              <span class="flex flex-col">
-                <span class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
-                  >Extensions</span
-                >
-                <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
-                  
-                    <time datetime="2025-08-05T08:38:14&#43;01:00">5 August 2025</time>
-                  
-                </span>
-              </span>
-              <span
-                class="ml-3 text-neutral-700 group-hover:text-primary-600 ltr:inline rtl:hidden dark:text-neutral dark:group-hover:text-primary-400"
-                >&rarr;</span
-              >
-              <span
-                class="mr-3 text-neutral-700 group-hover:text-primary-600 ltr:hidden rtl:inline dark:text-neutral dark:group-hover:text-primary-400"
-                >&larr;</span
-              >
-            </a>
           
         </span>
       </div>
