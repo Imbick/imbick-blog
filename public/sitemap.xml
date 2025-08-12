@@ -3,43 +3,49 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
   <url>
-    <loc>https://imbick.com/posts/extendo/</loc>
+    <loc>http://localhost:1313/</loc>
+    <lastmod>2025-08-12T17:38:45+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://localhost:1313/posts/</loc>
+    <lastmod>2025-08-12T17:38:45+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://localhost:1313/posts/v0.1.1-alpha/</loc>
+    <lastmod>2025-08-12T17:38:45+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://localhost:1313/posts/extendo/</loc>
     <lastmod>2025-08-05T08:38:14+01:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://imbick.com/</loc>
-    <lastmod>2025-08-05T08:38:14+01:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://imbick.com/posts/</loc>
-    <lastmod>2025-08-05T08:38:14+01:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://imbick.com/posts/gravity/</loc>
+    <loc>http://localhost:1313/posts/gravity/</loc>
     <lastmod>2025-08-03T09:33:12+01:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://imbick.com/posts/jumping/</loc>
+    <loc>http://localhost:1313/posts/jumping/</loc>
     <lastmod>2025-07-30T17:52:02+01:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://imbick.com/posts/playing/</loc>
+    <loc>http://localhost:1313/posts/playing/</loc>
     <lastmod>2025-07-30T08:16:22+01:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://imbick.com/posts/rise/</loc>
+    <loc>http://localhost:1313/posts/rise/</loc>
     <lastmod>2025-07-28T18:16:33+01:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
