@@ -12,9 +12,10 @@ It's been a while without any updates here, but here's the latest version packag
 {{< /button >}}
 
 I've been massively overhauling the way input contexts work along with the  physics calculations. I
-took a detour into experimenting with [EnttSharp](https://github.com/RabbitStewDio/EnTTSharp), but it ended using over 25% CPU whenever
-components were written back which seemed excessive so I rolled back to [LeoEcsLite](https://github.com/LeoECSCommunity/ecslite) but kept some of
-the API refactoring which was an improvement.
+took a detour into experimenting with [EnttSharp](https://github.com/RabbitStewDio/EnTTSharp), but
+it ended using over 25% CPU whenever components were written back which seemed excessive so I
+rolled back to [LeoEcsLite](https://github.com/LeoECSCommunity/ecslite) but kept some of the API
+refactoring which was an improvement.
 
 Next I'll be continuing to tweak the physics numbers to get a good feeling. Along with fixing the
 jump code and wall slide accelerations which shouldn't be happening.
