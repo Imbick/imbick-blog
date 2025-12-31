@@ -1,0 +1,313 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cyber Investigation Terminal</title>
+    <style>
+        body {
+            background: #000;
+            color: #33ff33;
+            font-family: "Consolas", monospace;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .crt::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient( to bottom, rgba(0,255,0,0.05) 0px, rgba(0,255,0,0.05) 1px, transparent 2px, transparent 4px );
+            pointer-events: none;
+        }
+
+        #terminal {
+            white-space: pre-wrap;
+            font-size: 1.1em;
+            line-height: 1.3em;
+            min-height: 400px;
+        }
+
+        #input {
+            width: 100%;
+            background: black;
+            color: #33ff33;
+            border: none;
+            outline: none;
+            font-family: monospace;
+            font-size: 1.1em;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="crt">
+        <pre id="terminal"></pre>
+        <input type="text" id="input" placeholder=" >" autofocus />
+    </div>
+
+    <script>
+        const terminal = document.getElementById("terminal");
+        const input = document.getElementById("input");
+
+        // directories
+        const lbDiscography = {
+            "limp bizkit": {
+                "3$ bill": {
+                    "counterfeit": {},
+                    "stuck": {},
+                    "nobody loves me": {},
+                    "sour": {},
+                    "faith": {},
+                    "stalemate": {},
+                    "clunk": {},
+                    "indigo flow": {},
+                    "leech": {},
+                    "undone": {},
+                    "everything": {}
+                },
+                "significant other": {
+                    "intro": {},
+                    "just like this": {},
+                    "nookie": {},
+                    "break stuff": {},
+                    "re-arranged": {},
+                    "i'm broke": {},
+                    "nobody like you": {},
+                    "don't go off wandering": {},
+                    "9 teen 90 nine": {},
+                    "n 2 gether now": {},
+                    "trust?": {},
+                    "no sex": {},
+                    "show me what you got": {},
+                    "a lesson learned": {},
+                    "outro": {}
+                },
+                "chocolate starfish and the hot dog flavored water": {
+                    "intro": {},
+                    "hot dog": {},
+                    "my generation": {},
+                    "full nelson": {},
+                    "my way": {},
+                    "rollin' (air raid vehicle)": {},
+                    "livin' it up": {},
+                    "the one": {},
+                    "getcha groove on": {},
+                    "take a look around": {},
+                    "it'll be ok": {},
+                    "boiler": {},
+                    "hold on": {},
+                    "rollin' (urban assault vehicle)": {},
+                    "outro": {}
+                },
+                "results may vary": {
+                    "re-entry": {},
+                    "eat you alive": {},
+                    "gimme the mic": {},
+                    "underneath the gun": {},
+                    "down another day": {},
+                    "almost over": {},
+                    "build a bridge": {},
+                    "red light-green light": {},
+                    "the only one": {},
+                    "let me down": {},
+                    "lonely world": {},
+                    "phenomenon": {},
+                    "creamer (radio is dead)": {},
+                    "head for the barricade": {},
+                    "behind blue eyes": {},
+                    "drown": {}
+                },
+                "the unquestionable truth": {
+                    "the propaganda": {},
+                    "the truth": {},
+                    "the priest": {},
+                    "the key": {},
+                    "the channel": {},
+                    "the story": {}
+                },
+                "gold cobra": {
+                    "introbra": {},
+                    "bring it back": {},
+                    "gold cobra": {},
+                    "shark attack": {},
+                    "get a life": {},
+                    "shotgun": {},
+                    "douche bag": {},
+                    "walking away": {},
+                    "loser": {},
+                    "autotunage": {},
+                    "100000 miles": {},
+                    "why try": {},
+                    "killer in you": {}
+                },
+                "still sucks": {
+                    "out of style": {},
+                    "dirty rotten bizkit": {},
+                    "dad vibes": {},
+                    "turn it up, bitch": {},
+                    "don't change": {},
+                    "you bring out the worst in me": {},
+                    "love the hate": {},
+                    "barnacle": {},
+                    "empty hole": {},
+                    "pill popper": {},
+                    "snacky poo": {},
+                    "goodbye": {}
+                }
+            }
+        };
+
+        // Track current path in the tree
+        let currentPath = ["limp bizkit"];
+
+        // Get current directory object/array
+        function getCurrentDir() {
+            let dir = lbDiscography;
+            for (const part of currentPath) {
+                dir = dir[part];
+            }
+            return dir;
+        }
+
+        // List files/folders in current directory
+        function ls() {
+            const dir = getCurrentDir();
+            if (Array.isArray(dir)) {
+                dir.forEach(item => print("[DIR] " + item));
+            } else if (typeof dir === "object") {
+                Object.keys(dir).forEach(item => print("[DIR] " + item));
+            }
+
+            if (currentPath.length == 1 && currentPath[0] === "limp bizkit") {
+                print("[FILE] readme1.txt");
+            } else if (currentPath.length == 3 && currentPath[2] === "take a look around") {
+                print("[FILE] readme2.txt");
+            } else if (currentPath.length == 3 && currentPath[2] === "re-arranged") {
+                print("[FILE] readme3.txt");
+            } else if (currentPath.length == 3 && currentPath[2] === "hot dog") {
+                print("[FILE] secretz.txt");
+            }
+        }
+
+        // Change directory
+        function cd(folder) {
+            if (!folder) {
+                print("Usage: /cd [folder]");
+                return;
+            }
+            if (folder === "..") {
+                if (currentPath.length > 1) {
+                    currentPath.pop();
+                }
+                printCurrentDir();
+                return;
+            }
+            const dir = getCurrentDir();
+            folder = folder.toLowerCase();
+            if (typeof dir === "object" && dir.hasOwnProperty(folder)) {
+                currentPath.push(folder);
+            } else {
+                print(`Folder not found: ${folder}`);
+            }
+            printCurrentDir();
+        }
+
+        function printCurrentDir() {
+            let dir = lbDiscography;
+            let fullPath = "";
+            for (const part of currentPath) {
+                fullPath += "/" + part;
+            }
+            print(fullPath);
+        }
+
+        // Help text
+        const commands = [
+            "/help - list available commands",
+            "/ls - list files and folders",
+            "/open [file] - opens the file",
+            "/cd [directory] - changes to the specified directory",
+            "/cd .. - changes to the parent directory",
+            "/cls - clears the screen"
+        ];
+
+        // Utility function to print to terminal
+        function print(text) {
+            terminal.textContent += text + "\n";
+            terminal.scrollTop = terminal.scrollHeight;
+        }
+
+        function open(file) {
+            if (file === "readme1.txt") {
+                print("This track was personally selected by agent Tom Cruise to serve as the lead anthem for the soundtrack of a major 2000 spy-action blockbuster. The file shares its title with a common phrase used when surveying one's surroundings.");
+            } else if (file === "readme2.txt") {
+                print("The visual documentation (music video) for this track serves as a metaphorical response to the Woodstock '99 riots. It depicts the band members being arrested, tried in court, and eventually executed by being drowned in a room full of milk.");
+            } else if (file === "readme3.txt") {
+                print("This track contains so many lyrical references and interpolations of Nine Inch Nails that Fred Durst was legally required to give Trent Reznor a songwriting credit. Despite being a 'diss' track, the royalties from this file flow directly to the target of the insults.");
+            } else if (file === "secretz.txt") {
+                print("PASSWORD: FREDDURST");
+            } else {
+                print("file not found");
+            }
+            
+        }
+
+        // Welcome animation
+        let welcome = "MI6 DIAGNOSTICS TERMINAL\nType '/help' to list commands...\n\n";
+        let idx = 0;
+        function typeWelcome() {
+            if (idx < welcome.length) {
+                terminal.textContent += welcome[idx];
+                idx++;
+                setTimeout(typeWelcome, 10 + Math.random() * 20);
+            } else {
+                printCurrentDir();
+                document.getElementById("input").focus();
+            }
+        }
+        typeWelcome();
+
+        // Command processing
+        input.addEventListener("keydown", e => {
+            if (e.key === "Enter") {
+                const raw = input.value.trim();
+                if (!raw) return;
+                print("> " + raw);
+                const parts = raw.split(" ");
+                const cmd = parts[0];
+                const arg = parts.slice(1).join(" ");
+
+                switch (cmd) {
+                    case "/help":
+                        commands.forEach(c => print(c));
+                        break;
+                    case "/cls":
+                        terminal.textContent = "";
+                        idx = 0;
+                        typeWelcome();
+                        break;
+                    case "/ls":
+                        ls();
+                        break;
+                    case "/cd":
+                        cd(arg);
+                        break;
+                    case "/open":
+                        open(arg);
+                        break;
+                    default:
+                        print("Unknown command. Type '/help' for a list of commands.");
+                }
+
+                input.value = "";
+            }
+        });
+    </script>
+</body>
+</html>
