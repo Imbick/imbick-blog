@@ -22,7 +22,7 @@ To measure the performance of all this I've also adopted the [Perfetto](https://
 
 This allows me to visualise the performance of the complex multithreaded architecture in a much more helpful way.
 
-![Green Hill Zone](perfetto.png "Soft but many")
+![Perfecto](perfetto.png "This took a while")
 
 `Rise.Main` is the main thread which exclusively runs the OpenGL renderer (once the system level initialisation is complete).
 
